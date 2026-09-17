@@ -28,7 +28,7 @@ class univ:
             "subPropertyOf",
             "inverseOf",
             "versionInfo",
-            "comment"
+            "comment",
         ]
     )
 
@@ -44,7 +44,6 @@ class TestLoadNonExistingGraph:
     def setup_method(self):
         self.failed_graph = tsk01.load_graph_data("graph_monte_cristo")
 
-
     def test_graphs_not_found(self):
         assert self.failed_graph is None
 
@@ -55,20 +54,17 @@ class TestLoadGraph:
         self.univ = tsk01.load_graph_data("univ")
         self.gzip = tsk01.load_graph_data("gzip")
 
-
     def test_wc(self):
         assert not self.wc is None
         assert self.wc.vertices == wc.vertices
         assert self.wc.edges == wc.edges
         assert self.wc.labels == wc.labels
 
-
     def test_univ(self):
         assert not self.wc is None
         assert self.wc.vertices == wc.vertices
         assert self.wc.edges == wc.edges
         assert self.wc.labels == wc.labels
-
 
     def test_gzip(self):
         assert not self.wc is None
