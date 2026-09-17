@@ -55,19 +55,19 @@ class TestLoadGraph:
         self.gzip = tsk01.load_graph_data("gzip")
 
     def test_wc(self):
-        assert not self.wc is None
+        assert self.wc is not None
         assert self.wc.vertices == wc.vertices
         assert self.wc.edges == wc.edges
         assert self.wc.labels == wc.labels
 
     def test_univ(self):
-        assert not self.wc is None
+        assert self.wc is not None
         assert self.wc.vertices == wc.vertices
         assert self.wc.edges == wc.edges
         assert self.wc.labels == wc.labels
 
     def test_gzip(self):
-        assert not self.wc is None
+        assert self.wc is not None
         assert self.wc.vertices == wc.vertices
         assert self.wc.edges == wc.edges
         assert self.wc.labels == wc.labels

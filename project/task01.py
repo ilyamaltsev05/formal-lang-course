@@ -3,7 +3,6 @@ from pathlib import Path
 from typing import Any
 import cfpq_data
 import networkx as nx
-import pydot
 
 
 @dataclass
