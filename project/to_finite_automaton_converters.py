@@ -1,3 +1,4 @@
+from sys import stderr
 from typing import Set
 
 from networkx import MultiDiGraph
@@ -11,7 +12,9 @@ from pyformlang.finite_automaton import (
 def regex_to_dfa(regex: str) -> DeterministicFiniteAutomaton:
     r = Regex(regex)
     nfa = r.to_epsilon_nfa()
-    assert nfa is not None
+    if nfa is None:
+        print("Failed to convert regex to automaton", file=stderr)
+        return DeterministicFiniteAutomaton()
     dfa = nfa.to_deterministic().minimize()
     return dfa
 
