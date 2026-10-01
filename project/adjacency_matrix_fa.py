@@ -29,7 +29,9 @@ class AdjacencyMatrixFA:
         for label in self.all_labels:
             edges = [
                 (self.state_to_idx[from_node], self.state_to_idx[to_node])
-                for from_node, to_node, edge_label in networkx_automaton.edges(data="label")
+                for from_node, to_node, edge_label in networkx_automaton.edges(
+                    data="label"
+                )
                 if edge_label == label
             ]
             rows = [row for row, _ in edges]
