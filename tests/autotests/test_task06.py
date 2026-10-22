@@ -32,6 +32,6 @@ def test_cfg_to_weak_normal_form_exists():
     try:
         import project.cfg_to_wcnf
 
-        assert "cfg_to_weak_normal_form" in dir(project.task6)
+        assert "cfg_to_weak_normal_form" in dir(project.cfg_to_wcnf)
     except NameError:
         assert False
